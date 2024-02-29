@@ -10,11 +10,15 @@ class ChannelInfo {
   final String title;
   final String description;
   final String subscriberCount;
+  final String viewCount;
+  final String videoCount;
 
   ChannelInfo({
     required this.title,
     required this.description,
     required this.subscriberCount,
+    required this.viewCount,
+    required this.videoCount,
   });
 
   factory ChannelInfo.fromMap(Map<String, dynamic> map) {
@@ -22,6 +26,8 @@ class ChannelInfo {
       title: map['items'][0]['snippet']['title'],
       description: map['items'][0]['snippet']['description'],
       subscriberCount: map['items'][0]['statistics']['subscriberCount'],
+      viewCount: map['items'][0]['statistics']['viewCount'],
+      videoCount: map['items'][0]['statistics']['videoCount'],
     );
   }
 }
@@ -95,13 +101,21 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const SizedBox(height: 20),
             _channelInfo != null
-                ? _buildInfoBox('Title', _channelInfo!.title): Container(),
+                ? _buildInfoBox('Title', _channelInfo!.title)
+                : Container(),
+            _channelInfo != null
+                ? _buildInfoBox('Description', _channelInfo!.description)
+                : Container(),
             _channelInfo != null
                 ? _buildInfoBox(
-                    'Description', _channelInfo!.description): Container(),
+                    'Subscriber Count', _channelInfo!.subscriberCount)
+                : Container(),
             _channelInfo != null
-                ? _buildInfoBox(
-                    'Subscriber Count', _channelInfo!.subscriberCount): Container(),
+                ? _buildInfoBox('View Count', _channelInfo!.viewCount)
+                : Container(),
+            _channelInfo != null
+                ? _buildInfoBox('Video Count', _channelInfo!.videoCount)
+                : Container(),
           ],
         ),
       ),
