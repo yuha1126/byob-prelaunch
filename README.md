@@ -1,16 +1,13 @@
 # byob_prelaunch
 
-A new Flutter project.
+A Youtube Data API analytics project written in Flutter Dart.
 
-## Getting Started
+This repo contains an application that lets you enter a youtube channel's username and it returns data related to the input channel.
 
-This project is a starting point for a Flutter application.
+Displays information such as channel name, the channel description, subscriber count, view count, and video count.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Future implementations:
+- allow the application to display multiple channels at once
+- display the data in graphs for better comprehension
+- better error checking for cases when the channel is not found or contains private information
+- clearer UI
